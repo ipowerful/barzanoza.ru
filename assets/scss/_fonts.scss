@@ -1,0 +1,39 @@
+$fontPath: '~assets/fonts' !default;
+$MontserratVersion: '1.0' !default;
+
+@mixin fontdef($FontPath, $FontName, $Version, $FontType:'Regular', $weight: 400) {
+  font-family: #{$FontName} #{$FontType};
+  src: url('#{$FontPath}/#{$FontName}-#{$FontType}.woff2?v=#{$Version}') format('woff2'),
+  url('#{$FontPath}/#{$FontName}-#{$FontType}.woff?v=#{$Version}') format('woff'),
+  url('#{$FontPath}/#{$FontName}-#{$FontType}.eot?#iefix?v=#{$Version}') format('embedded-opentype');
+  font-weight: $weight;
+}
+
+// Regular
+@font-face {
+  @include fontdef($fontPath, 'Montserrat', $MontserratVersion, 'Regular', 400)
+}
+// Regular italic
+@font-face {
+  @include fontdef($fontPath, 'Montserrat', $MontserratVersion, 'Italic', 400)
+}
+
+// Light
+@font-face {
+  @include fontdef($fontPath, 'Montserrat', $MontserratVersion, 'Light', 300)
+}
+
+// Light italic
+@font-face {
+  @include fontdef($fontPath, 'Montserrat', $MontserratVersion, 'LightItalic', 300)
+}
+
+// Bold
+@font-face {
+  @include fontdef($fontPath, 'Montserrat', $MontserratVersion, 'Bold', 700)
+}
+
+// Bold italic
+@font-face {
+  @include fontdef($fontPath, 'Montserrat', $MontserratVersion, 'BoldItalic', 700)
+}
