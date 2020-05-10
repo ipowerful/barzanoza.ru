@@ -34,6 +34,12 @@ export default {
       {
         rel: 'shortcut icon', href: '/favicons/favicon.ico',
       },
+      {
+        rel: 'shortcut icon', href: '/favicons/favicon.ico',
+      },
+      {
+        rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,500,600,700,800|Montserrat:300,400,500,600,700,900',
+      },
     ],
   },
   /*
