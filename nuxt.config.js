@@ -94,6 +94,31 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      /* Excludes @/assets/symbols from url-loader */
+      config.module.rules.filter(r => r.test.toString()
+        .includes('svg'))
+        .forEach((r) => {
+          r.exclude = /(assets\/symbols)/; /* eslint-disable-line no-param-reassign */
+        });
+      /* Includes @/assets/symbols for svg-sprite-loader */
+      config.module.rules.push({
+        test: /\.svg$/,
+        include: [
+          path.resolve(__dirname, 'assets/symbols'),
+        ],
+        exclude: [
+          path.resolve(__dirname, 'images/'),
+        ],
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              svgo: false,
+              symbolId: filePath => path.basename(filePath, '.svg'),
+            },
+          },
+        ],
+      });
     }
   }
 }
