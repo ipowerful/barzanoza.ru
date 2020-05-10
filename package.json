@@ -4,6 +4,9 @@
   "description": "My remarkable Nuxt.js project",
   "author": "Ilia Trifonov",
   "private": true,
+  "engines": {
+    "node": "13.11.x"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
