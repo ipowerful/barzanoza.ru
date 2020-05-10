@@ -1,0 +1,8 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('logo')
+  +e('link',{t:'nuxt-link'})(:to="{name: 'index'}")
+    //-+e('img',{t:'img'})(src="~assets/img/logo.png")
+    +e('icon', {t: 'svg'})
+      use(xlink:href="#zanoza-logo")
