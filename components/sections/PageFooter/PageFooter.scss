@@ -1,0 +1,8 @@
+.page-footer {
+
+  &__container {
+    @include make-container();
+    padding: 4rem 0;
+    text-align: center;
+  }
+}
