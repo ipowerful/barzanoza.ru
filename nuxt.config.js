@@ -74,13 +74,17 @@ export default {
     bootstrapCSS: false,
     bootstrapVueCSS: false
   },
+  css: [
+    'bootstrap/scss/bootstrap-reboot.scss',
+    '~assets/scss/_fonts.scss',
+  ],
   styleResources: {
     scss: [
       'bootstrap/scss/_functions.scss',
       'bootstrap/scss/_variables.scss',
       'bootstrap/scss/_mixins.scss',
-      'bootstrap-vue/src/_variables.scss',
-      '~/assets/scss/_custom.scss', // my custom variable overrides
+      '~/assets/scss/_variables.scss', // my custom variable overrides
+      //'bootstrap-vue/src/_variables.scss',
     ],
   },
   /*
