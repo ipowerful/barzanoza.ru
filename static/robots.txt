@@ -1,0 +1,19 @@
+User-Agent: *
+Disallow: /*?gclid=
+Disallow: /*?utm_source=
+Disallow: /*?yclid=
+Disallow: /*_openstat*
+
+User-Agent: Yandex
+Disallow: /*?gclid=
+Disallow: /*?utm_source=
+Disallow: /*?yclid=
+Disallow: /*_openstat*
+Host: https://barzanoza.ru/
+
+User-Agent: Googlebot
+Disallow: /*?gclid=
+Disallow: /*?utm_source=
+Disallow: /*?yclid=
+Disallow: /*_openstat*
+Sitemap: https://barzanoza.ru/sitemap.xml
