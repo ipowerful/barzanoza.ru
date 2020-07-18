@@ -1,0 +1,6 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('navbar',{t:'ul'})
+  +e('item',{t:'li'})(v-for="item in navbarItems")
+    +e('link',{t:'a'})(:href="item.slug") {{item.name}}
