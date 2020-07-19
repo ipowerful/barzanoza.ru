@@ -1,21 +1,24 @@
 <template>
-  <div class="logo">
-    <nuxt-link class="logo__link" :to="{name: 'index'}">
-      <svg class="icon__svg">
-        <use xlink:href="#zanoza-logo.svg" />
-      </svg>
-    </nuxt-link>
-  </div>
+  <nuxt-link class="logo" :to="{name: 'index'}" >
+    <icon :name="`zanoza-logo`" class="logo__icon" />
+  </nuxt-link>
 </template>
 
 <script>
+import Icon from '~/components/_library/Icon/Icon.vue'
 import '~/assets/symbols/zanoza-logo.svg'
 
-export default {}
+export default {
+  components: {
+    Icon
+  }
+}
 </script>
 
 <style lang="scss">
 .logo {
+  display: block;
+
   &__icon {
     width: 140px;
     height: 42px;
