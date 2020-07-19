@@ -1,6 +1,13 @@
 $fontPath: '~assets/fonts' !default;
 $MontserratVersion: '1.0' !default;
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: liga,kern;
+  text-rendering: optimizelegibility;
+}
+
 @mixin fontdef($FontPath, $FontName, $Version, $FontType:'Regular', $weight: 400) {
   font-family: #{$FontName} #{$FontType};
   src: url('#{$FontPath}/#{$FontName}-#{$FontType}.woff2?v=#{$Version}') format('woff2'),
