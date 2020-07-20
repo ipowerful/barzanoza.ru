@@ -9,7 +9,13 @@
 <script>
 export default {
   props: {
-    name: String
+    name: {
+      type: String,
+      default: 'pixel'
+    }
+  },
+  created () {
+    require(`~/assets/symbols/${this.name}.svg`)
   }
 }
 </script>
