@@ -1,0 +1,36 @@
+$developed-by-primary: #00cccc;
+$developed-by-secondary: #E2CF45;
+$developed-by-secondary: #ffdb00;
+
+.redgarnet {
+  &__link {
+    position: relative;
+    padding-left: 15px;
+    margin-left: 6px;
+    color: $developed-by-primary;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($developed-by-primary, 20%);
+      text-decoration: none;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 21px;
+      background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cpath fill='#{$developed-by-secondary}' d='m155.109 74.028a4 4 0 0 0 -3.48-2.028h-52.4l8.785-67.123a4.023 4.023 0 0 0 -7.373-2.614l-63.724 111.642a4 4 0 0 0 3.407 6.095h51.617l-6.962 67.224a4.024 4.024 0 0 0 7.411 2.461l62.671-111.63a4 4 0 0 0 .048-4.027z'/%3E%3C/svg%3E"), "#", "%23") ;
+      background-size: 14px 21px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
