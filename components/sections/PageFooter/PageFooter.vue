@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DevelopedBy from '~/components/blocks/DevelopedBy/DevelopedBy.vue'
+import DevelopedBy from '~/components/_library/DevelopedBy/DevelopedBy.vue'
 import Logo from '~/components/_library/Logo/Logo.vue'
 
 export default {
