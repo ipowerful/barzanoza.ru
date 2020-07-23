@@ -3,7 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
 
+  background: $white;
   box-shadow: 0 0 3px $gray;
 
   &__container {
