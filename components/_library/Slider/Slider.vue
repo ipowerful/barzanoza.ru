@@ -1,8 +1,12 @@
 <template>
-  <div v-swiper:mySwiper="swiperOption">
+  <div v-swiper:mySwiper="swiperOption" class="slider">
     <div class="swiper-wrapper">
-      <div v-for="banner in banners" :key="banner" class="swiper-slide">
-        <img :src="banner">
+      <div
+          v-for="banner in banners"
+          :key="banner"
+          class="slider__item swiper-slide"
+          :style="{ 'background-image': `url(${banner})` }" >
+        <!-- <img :src="banner" class="slider__image"> -->
       </div>
     </div>
     <div class="swiper-pagination" />
@@ -11,7 +15,6 @@
 
 <script>
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-// import 'swiper/css/swiper.css'
 import 'swiper/swiper-bundle.css'
 
 export default {
@@ -25,9 +28,9 @@ export default {
   data () {
     return {
       banners: [
-        '/zanoza-promo1.jpg',
-        '/zanoza-promo2.jpg',
-        '/zanoza-promo3.jpg'
+        require('~/assets/images/zanoza-promo1.jpg'),
+        require('~/assets/images/zanoza-promo2.jpg'),
+        require('~/assets/images/zanoza-promo3.jpg')
       ],
       swiperOption: {
         pagination: {
@@ -43,6 +46,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style src="./Slider.scss" lang="scss"></style>
