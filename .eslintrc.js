@@ -8,11 +8,23 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'airbnb-base/legacy',
+    'plugin:nuxt/recommended',
+    'plugin:sonarjs/recommended',
   ],
-  // add your custom rules here
   rules: {
-    "no-console": "off"
-  }
+    'import/no-unresolved': 0,
+    'no-console': 'off',
+    'dot-notation': 0,
+    'max-len': ["error", { "code": 300 }],
+    'no-loops/no-loops': 2,
+    'comma-dangle': 0,
+  },
+  plugins: [
+    'import',
+    'pug',
+    'promise',
+    'no-loops',
+    'sonarjs',
+  ],
 }
