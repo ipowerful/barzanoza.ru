@@ -1,9 +1,7 @@
 <template>
-  <div class="cart">
-    <a href="#" class="cart__link">
-      <icon :name="`shopping-bag`" class="cart__icon" />
-    </a>
-  </div>
+  <a href="#" class="cart">
+    <icon :name="`shopping-bag`" class="cart__icon" data-counter="10" />
+  </a>
 </template>
 
 <script>
@@ -21,6 +19,25 @@ export default {
   &__icon {
     width: 24px;
     height: 24px;
+    
+    position: relative;
+    
+    &:after {
+      position: absolute;
+      top: -30%;
+      right: -60%;
+      width: 22px;
+      height: 22px;
+      background: $primary;
+      border-radius: 50%;
+      
+      content: attr(data-counter);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      font-size: .78571rem;
+    }
   }
   /* 
   &__link {
