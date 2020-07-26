@@ -1,8 +1,0 @@
-.slider {
-  &__item {
-    height: calc(100vh - #{$page-padding-top});
-    background: $gray;
-    background-position: center;
-    background-size: cover;
-  }
-}

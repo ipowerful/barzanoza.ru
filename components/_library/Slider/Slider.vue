@@ -1,29 +1,26 @@
 <template>
-  <div v-swiper:mySwiper="swiperOption" class="slider">
-    <div class="swiper-wrapper">
-      <div
-          v-for="banner in banners"
-          :key="banner"
-          class="slider__item swiper-slide"
-          :style="{ 'background-image': `url(${banner})` }" >
-        <!-- <img :src="banner" class="slider__image"> -->
-      </div>
+  <swiper class="swiper" :options="swiperOption">
+    <div
+        v-for="banner in banners"
+        :key="banner"
+        class="slider__item swiper-slide"
+        :style="{ 'background-image': `url(${banner})` }" >
+      <!-- <img :src="banner" class="slider__image"> -->
     </div>
-    <div class="swiper-pagination" />
-  </div>
+    <div class="swiper-button-prev" slot="button-prev"></div>
+    <div class="swiper-button-next" slot="button-next"></div>
+    <div class="swiper-pagination" slot="pagination"></div>
+  </swiper>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 
 export default {
   components: {
     Swiper,
     SwiperSlide
-  },
-  directives: {
-    swiper: directive
   },
   data () {
     return {
@@ -34,16 +31,30 @@ export default {
       ],
       swiperOption: {
         pagination: {
-          el: '.swiper-pagination'
+          el: '.swiper-pagination',
+          dynamicBullets: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         }
       }
     }
   },
   mounted () {
     console.log('Current Swiper instance object', this.mySwiper)
-    this.mySwiper.slideTo(3, 1000, false)
   }
 }
 </script>
 
-<style src="./Slider.scss" lang="scss"></style>
+<style lang="scss">
+  /* @import './base.scss'; */
+  .slider {
+    &__item {
+      height: calc(100vh - #{$page-padding-top});
+      background: $gray;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+</style>
